@@ -15,5 +15,5 @@ demo at https://t.me/infinitrotorrenticBot
 <br>/thumbnail  -thumbnail set</br>
 <br>/rename - rename file</br>
 <br>/del_thumbnail -delete thumbnail</br>
-toutorial here 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇
+<br>toutorial here 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇</br>
 <B>https://www.youtube.com/embed/3Ulfyo3ZFm4</B>
