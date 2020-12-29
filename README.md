@@ -15,4 +15,4 @@ demo at https://t.me/infinitrotorrenticBot
 <br>/thumbnail  -thumbnail set</br>
 <br>/rename - rename file</br>
 <br>/del_thumbnail -delete thumbnail</br>
-<iframe src="https://www.youtube.com/embed/3Ulfyo3ZFm4?autoplay=1&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"></iframe>
+<iframe src="https://www.youtube.com/embed/3Ulfyo3ZFm4"></iframe>
