@@ -7,11 +7,8 @@
   "repository": "https://github.com/Nirmalraj10567/RenamerBotiv",
 
   "keywords": ["node", "express", "RenamerBotbot", "torrent", "automation"]
+  "env": {
 
-  
-
-}
-"env": {
     "a": {
 
       "description": "Get this value from https://my.telegram.org",
@@ -19,6 +16,7 @@
       "value": ""
 
     },
+
       "b": {
 
       "description": "Get this value from https://my.telegram.org",
@@ -26,6 +24,7 @@
       "value": ""
 
     },
+
       "b": {
 
       "description": " bot_token Get this value from https://my.telegram.org",
@@ -34,6 +33,8 @@
 
     }
 
+}
 
+  
 
 }
