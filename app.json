@@ -1,13 +1,39 @@
 {
 
-  "name": "download",
+  "name": "RenamerBot",
 
-  "description": "All in one bot for torrenting",
+  "description": "RenamerBot by infinitrocyber",
 
-  "repository": "https://github.com/Nirmalraj10567/zee5-dl-bot",
+  "repository": "https://github.com/Nirmalraj10567/RenamerBotiv",
 
-  "keywords": ["node", "express", "bot", "torrent", "automation"]
+  "keywords": ["node", "express", "RenamerBotbot", "torrent", "automation"]
 
   
+
+}
+"env": {
+    "a": {
+
+      "description": "Get this value from https://my.telegram.org",
+
+      "value": ""
+
+    },
+      "b": {
+
+      "description": "Get this value from https://my.telegram.org",
+
+      "value": ""
+
+    },
+      "b": {
+
+      "description": " bot_token Get this value from https://my.telegram.org",
+
+      "value": ""
+
+    }
+
+
 
 }
