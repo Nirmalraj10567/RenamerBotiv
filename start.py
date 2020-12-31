@@ -107,6 +107,39 @@ async def handler(event):
     shutil.rmtree("./Download/"+chat.username)
 
     await client.send_message(chat,"thumbnail deleted")
+@client.on(events.NewMessage(pattern='(?i)https://'))
+
+async def handler(event):
+
+    chat = await event.get_chat()
+
+    print(chat)
+
+    dw = await event.get_reply_message()
+
+    print(dw)
+
+    links =event.text.split(" ")[1]
+
+    index = links.split("/")[-1]
+
+    ss = await client.send_message(chat,"wait few minutes")
+
+    out = subprocess.getoutput(f"pget '{links}' {index} -C 8")
+
+    print(out)
+
+    qw = await client.edit_message(chat,ss.id,"uploading now wait")
+
+    
+
+    await client.edit_message(chat,qw.id,file=index)
+
+    os.remove(index)
+
+   # linkss = event.text.split("/rename")
+
+   # print(linkss)
 @client.on(events.NewMessage(pattern='(?i)/rename'))
 async def handler(event):
     chat = await event.get_chat()
