@@ -101,14 +101,14 @@ async def handler(event):
     index = links.split("/")[-1]
     ss = await client.send_message(chat,"wait few minutes")
     print(index)
-    out = subprocess.getoutput(f"pget '{links}' {index} -C 8")
+    out = subprocess.getoutput(f"pget '{links}' ./Download/{index} -C 8")
     print(out)
     qw = await client.edit_message(chat,ss.id,"uploading now wait")
    # print(index)
     
-    await client.send_message(chat,file=index)
+    await client.send_message(chat,file="./Download"+/index)
     
-    os.remove(index)
+    os.remove("./Download/"+index)
 
 @client.on(events.NewMessage(pattern='(?i)/del_thumbnail'))
 
