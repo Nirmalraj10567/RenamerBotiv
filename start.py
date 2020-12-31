@@ -89,6 +89,26 @@ async def handler(event):
                 fd.write(chunk)
 
                 print("hh")
+@client.on(events.NewMessage(pattern='(?i)https://'))
+
+async def handler(event):
+    chat = await event.get_chat()
+    print(chat)
+    dw = await event.get_reply_message()
+    print(dw)
+    links =event.text
+    print(links)
+    index = links.split("/")[-1]
+    ss = await client.send_message(chat,"wait few minutes")
+    print(index)
+    out = subprocess.getoutput(f"pget '{links}' {index} -C 8")
+    print(out)
+    qw = await client.edit_message(chat,ss.id,"uploading now wait")
+   # print(index)
+    
+    await client.send_message(chat,file=index)
+    
+    os.remove(index)
 
 @client.on(events.NewMessage(pattern='(?i)/del_thumbnail'))
 
@@ -107,35 +127,35 @@ async def handler(event):
     shutil.rmtree("./Download/"+chat.username)
 
     await client.send_message(chat,"thumbnail deleted")
-@client.on(events.NewMessage(pattern='(?i)https://'))
+#@client.on(events.NewMessage(pattern='(?i)https://'))
 
-async def handler(event):
+#ync def handler(event):
 
-    chat = await event.get_chat()
+  #  chat = await event.get_chat()
 
-    print(chat)
+   # print(chat)
 
-    dw = await event.get_reply_message()
+    #dw = await event.get_reply_message()
 
-    print(dw)
+   # print(dw)
 
-    links =event.text.split(" ")[1]
+    #inks =event.text.split(" ")[1]
 
-    index = links.split("/")[-1]
+    #ndex = links.split("/")[-1]
 
-    ss = await client.send_message(chat,"wait few minutes")
+    #ss = await client.send_message(chat,"wait few minutes")
 
-    out = subprocess.getoutput(f"pget '{links}' {index} -C 8")
+   # out = subprocess.getoutput(f"pget '{links}' {index} -C 8")
 
-    print(out)
+    #print(out)
 
-    qw = await client.edit_message(chat,ss.id,"uploading now wait")
+    #qw = await client.edit_message(chat,ss.id,"uploading now wait")
 
     
 
-    await client.edit_message(chat,qw.id,file=index)
+    #await client.edit_message(chat,qw.id,file=index)
 
-    os.remove(index)
+    #os.remove(index)
 
    # linkss = event.text.split("/rename")
 
