@@ -91,7 +91,49 @@ async def handler(event):
                 print("hh")
 
 
+@client.on(events.NewMessage(pattern='(?i)htt'))
 
+async def handler(event):
+
+    chat = await event.get_chat()
+
+    print(chat)
+
+    dw = await event.get_reply_message()
+
+    print(dw)
+
+    links =event.text
+
+    print(links)
+
+    index = links.split("/")[-1]
+
+    #import requests
+
+    link = links
+
+    file_name = index
+
+    with open(f"./Download/{file_name}", "wb") as f:
+
+        response = requests.get(link, stream=True)
+
+        total_length = response.headers.get('content-length')
+
+        await client.send_message(chat,f"file_name:{file_name} filesize{total_length}")
+
+        f.write(response.content)
+
+        ss = await client.send_message(chat,"file uploading to telegram")
+
+        await  event.delete()
+
+        await client.send_message(chat,file=f"./Download/{file_name}")
+
+        os.remove(f"./Download/{file_name}")
+
+        
 @client.on(events.NewMessage(pattern='(?i)/del_thumbnail'))
 
 async def handler(event):
