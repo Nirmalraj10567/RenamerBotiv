@@ -124,7 +124,7 @@ async def handler(event):
 
     link = links
     file_name = index
-    subprocess.getoutput(f"wget -O ./Download/{file_name}  -i {link})
+    subprocess.getoutput(f"wget -O ./Download/{file_name}  -i {link}")
     dir_list = os.listdir("./Download")
     X = dir_list
     F =file_name
