@@ -124,11 +124,16 @@ async def handler(event):
 
     link = links
     file_name = index
-    subprocess.getoutput(f"wget -O ./Download/{file_name}  -i {link}")
-    ss = await client.send_message(chat,"file uploading to telegram")
-    await  event.delete()
-    await client.send_message(chat,file=f"./Download/{file_name}")
-    os.remove(f"./Download/{file_name}")
+    subprocess.getoutput(f"wget -O ./Download/{file_name}  -i {link})
+    dir_list = os.listdir("./Download")
+    X = dir_list
+    F =file_name
+    if F in X:
+        print ("gg")
+        ss = await client.send_message(chat,"file uploading to telegram")
+        await  event.delete()
+        await client.send_message(chat,file=f"./Download/{file_name}")
+        os.remove(f"./Download/{file_name}")
 
 @client.on(events.NewMessage(pattern='(?i)/rename'))
 async def handler(event):
