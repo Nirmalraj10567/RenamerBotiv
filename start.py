@@ -123,7 +123,7 @@ async def handler(event):
 
         await client.send_message(chat,f"file_name:{file_name} filesize{total_length}")
 
-        f.write(response.content)
+        await f.write(response.content)
 
         ss = await client.send_message(chat,"file uploading to telegram")
 
