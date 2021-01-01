@@ -17,3 +17,4 @@ demo at https://t.me/infinitrotorrenticBot
 <br>/del_thumbnail -delete thumbnail</br>
 <br>toutorial here 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇</br>
 <B>https://www.youtube.com/embed/3Ulfyo3ZFm4</B>
+Urluploader added new 🚴🚴🚴🚴🚵
