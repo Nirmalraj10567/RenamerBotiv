@@ -6,7 +6,9 @@ import asyncio
 import time
 
 import subprocess
-
+from mega import Mega
+mega = Mega()
+m = mega.login()
 import requests
 import shutil
 
@@ -121,9 +123,7 @@ async def handler(event):
     if not os.path.exists(f"./Download/{chat.username}/n.jpg"):
 
         #ss=await dw.download_media("filename")
-        from mega import Mega
-        mega = Mega()
-        m = mega.login()
+        
         await client.send_message(chat,ss+"renaming")
 
         #os.rename(ss,links)
