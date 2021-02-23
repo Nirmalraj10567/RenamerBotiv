@@ -111,34 +111,6 @@ async def handler(event):
     shutil.rmtree("./Download/"+chat.username)
 
     await client.send_message(chat,"thumbnail deleted")
-@client.on(events.NewMessage(pattern='(?i)htt'))
-async def handler(event):
-    chat = await event.get_chat()
-    print(chat)
-    dw = await event.get_reply_message()
-    print(dw)
-    links =event.text
-    print(links)
-    index = links.split("/")[-1]
-    #import requests
-
-    link = links
-    file_name = index
-   # subprocess.getoutput(f"wget -O ./Download/{file_name}  -i {link}")
-    dir_list = os.listdir("./Download")
-    X = dir_list
-    F =file_name
-    if F in X:
-        print ("gg")
-        r = requests.get(link)
-        with open("./Download/"+filename, 'wb') as f:
-        for chunk in r.iter_content(chunk_size=1024): 
-            if chunk: # filter out keep-alive new chunks
-                f.write(chunk)
-        #ss = await client.send_message(chat,"file uploading to telegram")
-       # await  event.delete()
-      #  await client.send_message(chat,file=f"./Download/{file_name}")
-        os.remove(f"./Download/{file_name}")
 
 @client.on(events.NewMessage(pattern='(?i)/rename'))
 async def handler(event):
