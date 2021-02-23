@@ -124,14 +124,14 @@ async def handler(event):
 
         #ss=await dw.download_media("filename")
         
-        await client.send_message(chat,ss+"renaming")
+        await client.send_message(chat,links)
 
         #os.rename(ss,links)
         a = m.download_url(links)
 
         await client.send_message(chat,links,file=a)
 
-        os.remove(links)
+        os.remove(a)
 
     if os.path.exists(f"./Download/{chat.username}/n.jpg"):
 
