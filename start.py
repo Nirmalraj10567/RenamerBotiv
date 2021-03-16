@@ -61,6 +61,27 @@ client = TelegramClient('anfghvygggghbohn',os.getenv("a"),os.getenv("b")).start(
     #os.mkdir("./Download/"+chat.username)
     
  
+@client.on(events.NewMessage(pattern='(?i)/upload'))
+async def handler(event):
+    chat = await event.get_chat()
+    print(chat)
+    dw = await event.get_reply_message()
+    links =event.text.split(" ")[1]
+    if not os.path.exists(f"./Download/{chat.username}"):
+        await client.send_message(chat,"downloading")
+        ss=await dw.download_media()
+        await client.send_message(chat,f"https://linkgenic.herokuapp.com/u?url={ss}")
+
+        
+
+      #  os.rename(ss,links)
+
+        
+
+    if os.path.exists(f"./Download/{chat.username}"):
+        await client.send_message(chat,"downloading")
+        ss=await dw.download_media()
+        await client.send_message(chat,f"https://linkgenic.herokuapp.com/u?url={ss}")
 
 @client.on(events.NewMessage(pattern='(?i)/thumbnail'))
 
